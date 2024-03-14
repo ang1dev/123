@@ -1,5 +1,5 @@
 import * as amqp from "amqplib/callback_api";
-import { sendMessage, receiveMessage } from "./amqfunc"; // Import receiveMessage function
+import { sendMessage, receiveMessage } from "./amqfunc"
 
 describe("RabbitMQ Tests", () => {
   let connection: amqp.Connection;
