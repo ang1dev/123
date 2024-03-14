@@ -1,6 +1,6 @@
 import * as amqp from "amqplib/callback_api";
 
-import { receiveMessage, sendMessage } from "./amqfunc";
+import { sendMessage } from "./amqfunc";
 
 describe("RabbitMQ Tests", () => {
   let connection: amqp.Connection;
@@ -11,6 +11,7 @@ describe("RabbitMQ Tests", () => {
     channelReady = new Promise((resolve, reject) => {
        amqp.connect("amqp://localhost:5672", (error0: any, conn: amqp.Connection) => {
          if (error0) {
+          console.error("Error connecting to RabbitMQ:", error0);
            reject(error0);
          }
          connection = conn;
@@ -69,8 +70,6 @@ describe("RabbitMQ Tests", () => {
    
       }, 1000); 
     }, 1000); 
-   
-    // Your existing test logic...
    });
 
 
