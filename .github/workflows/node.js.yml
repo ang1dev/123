@@ -27,12 +27,12 @@ jobs:
         uses: namoshek/rabbitmq-github-action@v1
         with:
           version: '3.8.9'
-          ports: '1883:1883 8883:8883'
+          ports: '5672:1883 15672:8883'
           certificates: ${{ github.workspace }}/.ci/tls-certificates
           config: ${{ github.workspace }}/.ci/rabbitmq.conf
           definitions: ${{ github.workspace }}/.ci/definitions.json
           container-name: 'mqtt'  
-          
+
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
