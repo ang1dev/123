@@ -7,7 +7,9 @@
     "dev": "ts-node-dev src/index.ts",
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/index.js ",
-    "test": "jest --env=nodej --coverage --runInBand --no-cache"
+    "test": "jest",
+    "version:patch": "npm version patch",
+    "testAndVersion": "npm test && npm run version:patch"
   },
   "keywords": [],
   "author": "",
