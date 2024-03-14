@@ -62,9 +62,15 @@ describe("RabbitMQ Tests", () => {
     const channel = await channelReady;
    
     sendMessage(channel, queue, msg);
+
+         setTimeout(() => {
+   
+        expect(consoleSpy).toHaveBeenCalledWith(`${msg}`);
+   
+      }, 1000); 
+    }, 1000); 
    
     // Your existing test logic...
    });
-});
 
 
